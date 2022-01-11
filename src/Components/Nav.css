@@ -1,0 +1,44 @@
+nav {
+  position: absolute;
+  right: -5px;
+  top: 0;
+  z-index: 1;
+  padding: 5px;
+  background-color: #9bb1ff;
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.logout {
+  border: 1px dotted;
+  background-color: #5465ff;
+  border-radius: 50%;
+  margin-right: 13px;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.logs {
+  width: 90px;
+}
+
+.logss {
+  border: 1px dotted;
+  background-color: #5465ff;
+  border-radius: 12px;
+  margin-right: 13px;
+  width: 90px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#getIn {
+  width: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f9be02;
+}

@@ -1,0 +1,100 @@
+.asideCerrado {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 50px;
+  background-color: skyblue;
+}
+
+.asideIn {
+  position: absolute;
+  top:0;
+  background-color: var(--bg);
+  width: 30%;
+  height: 100vh;
+  z-index: 1;
+  border-right: var(--border);
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-areas:
+    "navSpace"
+    "profilAside"
+    "linksAside"
+    "navSpace";
+  grid-template-rows: 80px 0.8fr 3fr 20px;
+  grid-template-columns: 100%;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.profilAside {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  border: var(--border);
+}
+
+#profilname {
+  color: white;
+}
+#profilphoto {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.midAside {
+  border: var(--border);
+  overflow: scroll;
+  padding-top: 5%;
+  padding-left: 10%;
+  overflow: auto;
+}
+
+.midAside ul {
+  display: grid;
+  align-items: start;
+  margin-left: 20px;
+}
+
+.midAside ul li {
+  margin-top: 15%;
+  margin-right: 40px;
+  color: white;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.midAside ul li:hover {
+  padding-left: 5%;
+}
+
+.asideLink:hover {
+  background-color: #484a4d;
+  border-radius: 10px;
+}
+
+/* CSSTransition classes  */
+.asideStyle-appear {
+  opacity: 0.01;
+  transform: translate(0, -10px);
+}
+.asideStyle-appear-done {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 300ms ease-in-out;
+}
+
+.asideStyle-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.asideStyle-exit-active {
+  opacity: 0.01;
+  transform: translate(0, -10px);
+  transition: all 300ms ease-in;
+}
+
+/*  */
+
+

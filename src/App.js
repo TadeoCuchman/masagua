@@ -13,6 +13,7 @@ import './Components/Login.css'
 import Footer from './Components/Footer';
 import Contact from './Pages/Contact'
 import AboutUs from './Pages/AboutUs'
+import HomeIn from './Pages/IN/HomeIn';
 
 
 function App() {
@@ -22,19 +23,21 @@ function App() {
   return (
     <div className="App">
       <Router>
-          <Nav setLogin={setLogin} token={token} setToken={setToken}/>
+          <Nav setLogin={setLogin} token={token} setToken={setToken} login={login}/>
           <Routes>
-            <Route exact path='/' element={<Home />} />
+            <Route exact path='/' login={login} element={<Home />} />
             <Route exact path='/Register' element={<Register />} />
             <Route exact path='/Contact' element={<Contact />} />
             <Route exact path='/AboutUs' element={<AboutUs />} />
+            {token && 
+            <Route path='/HomeIn' login={login} element={<HomeIn />}  />}
 
             
               
           </Routes>
 
-        {login && <Login setLogin={setLogin}/>}
-        <Footer />
+        {login && <Login setLogin={setLogin} setToken={setToken}/>}
+        <Footer login={login} />
       </Router>
     </div>
   );

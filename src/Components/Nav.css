@@ -4,6 +4,7 @@ nav {
   top: 0;
   z-index: 1;
   padding: 5px;
+  padding-right: 0;
   background-color: #9bb1ff;
   border-radius: 5px;
   margin-top: 5px;
@@ -19,6 +20,7 @@ nav {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  font-size: 12px;  
 }
 
 .logs {
@@ -34,6 +36,8 @@ nav {
   height: 25px;
   cursor: pointer;
   z-index: 10;
+  padding: 0;
+  
 }
 
 #getIn {

@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import useScrollPosition from "../Scripts/useScroll.js"
 import { Link, useNavigate } from "react-router-dom";
 
 const Nav = ({ setLogin, setToken, token, login }) => {
+
+
+  const scrollPosition = useScrollPosition();
+
   const navigate = useNavigate();
+  
 
   if (token) {
     return (
@@ -29,15 +35,20 @@ const Nav = ({ setLogin, setToken, token, login }) => {
     );
   } else {
     return (
-      <nav id="nav">
-        <Link to="/Register">
-          <button className="logss"> Register! </button>
-        </Link>
-        <button className="logss" onClick={() => setLogin(true)}>
-          {" "}
-          Login!{" "}
-        </button>
-      </nav>
+      <>
+      {scrollPosition < 5?
+        <nav id="nav">
+          <Link to="/Register">
+            <button className="logss"> Register! </button>
+          </Link>
+          <button className="logss" onClick={() => setLogin(true)}>
+            {" "}
+            Login!{" "}
+          </button>
+        </nav>
+        : ""
+      }
+      </>
     );
   }
 };

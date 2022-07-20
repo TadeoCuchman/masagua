@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Bwt from "../Components/Bwt";
@@ -12,11 +12,9 @@ const Register = () => {
   const [code, changeCode] = useState("");
   let navigate = useNavigate();
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
-  };
-
-  const postNewUser = () => {
     const newUser = {
       name: user,
       mail,
@@ -26,7 +24,7 @@ const Register = () => {
       code,
       salt: "",
     };
-
+  
     fetch("http://localhost:1001/users/register", {
       method: "POST",
       headers: {
@@ -46,6 +44,7 @@ const Register = () => {
         }
       });
   };
+  
 
   return (
     <div className="allPage">
@@ -113,9 +112,6 @@ const Register = () => {
           className="logss"
           type="sumbit"
           id="register"
-          onClick={() => {
-            postNewUser();
-          }}
         >
           Registrate!
         </button>
